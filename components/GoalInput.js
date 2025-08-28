@@ -10,7 +10,7 @@ export default function GoalInput ({onAddGoal}) {
     };
   
     const addGoalHandler = () => {
-      onAddGoal({text: goalInput, key: Math.random().toString()})
+      onAddGoal(goalInput)
       setGoalInput('');
     };
 

@@ -49,13 +49,13 @@ Press a to run on Android Emulator
 Scan the QR code with the Expo Go app to test on your phone
 
 ### 📂 Project Structure
-GoalsApp/
-├── App.js             # Main app entry
-├── components/
-│   ├── GoalInput.js   # Input component for adding goals
-│   └── GoalItem.js    # List item component
-├── assets/            # Images or other static files
-└── package.json       # Project configuration
+GoalsApp/  
+├── App.js             # Main app entry. 
+├── components/  
+│   ├── GoalInput.js   # Input component for adding goals  
+│   └── GoalItem.js    # List item component  
+├── assets/            # Images or other static files  
+└── package.json       # Project configuration  
 
 
 

@@ -1,8 +1,8 @@
-import { View, TextInput, Button } from "react-native";
+import { View, TextInput, Button, Modal } from "react-native";
 import { StyleSheet } from "react-native";
 import { useState } from "react";
 
-export default function GoalInput ({onAddGoal}) {
+export default function GoalInput ({onAddGoal, showModal, hideModal}) {
     const [goalInput, setGoalInput] = useState('');
   
    const goalInputHandler = (enteredText) => {
@@ -15,24 +15,34 @@ export default function GoalInput ({onAddGoal}) {
     };
 
   return (
-    <View style={styles.inputContainer}>
-      <TextInput placeholder='Your course goal...' style={styles.textInput} onChangeText={goalInputHandler} value={goalInput}/>
-      <Button title='Add Goal' onPress={addGoalHandler}/>
-    </View>
+    <Modal visible={showModal} animationType="slide" >
+      <View style={styles.inputContainer}>
+        <TextInput placeholder='Your course goal...' style={styles.textInput} onChangeText={goalInputHandler} value={goalInput}/>
+        <View style={styles.ctaContainer}>
+          <Button title='Add Goal' onPress={addGoalHandler}/>
+          <Button title='Cancel' onPress={hideModal}/>
+        </View>
+      </View>
+    </Modal>
           
   )
 }
 
 const styles = StyleSheet.create({
   inputContainer :{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
     gap: 10,
     paddingTop: 24,
     paddingBottom: 24,
-    borderBottomWidth: 1,
+  },
 
+  ctaContainer: {
+    flexDirection : 'row',
+    justifyContent: 'center',
+    gap: 40,
   },
 
   textInput: {
@@ -41,5 +51,4 @@ const styles = StyleSheet.create({
     width: '75%',
     padding: 10
   }
-  
 });

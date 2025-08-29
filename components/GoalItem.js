@@ -17,7 +17,7 @@ export default function GoalItem ({id, text, onDeleteItem}) {
 
 const styles = StyleSheet.create({  
     goalItem: {
-      backgroundColor: 'green',
+      backgroundColor: '#5231a3ff',
       padding: 10,
       marginTop: 10
     },

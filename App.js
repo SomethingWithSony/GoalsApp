@@ -1,4 +1,4 @@
-import { StyleSheet, View, FlatList, Button } from 'react-native';
+import { StyleSheet, View, FlatList, Button, SafeAreaView } from 'react-native';
 import {  useState } from 'react';
 
 import GoalItem from './components/GoalItem';
@@ -27,8 +27,8 @@ export default function App() {
   }
 
   return (
-    <View style={styles.appContainer}>
-      <Button title='Add New Goal' onPress={startAddGoalHandler}/>
+    <SafeAreaView style={styles.appContainer}>
+      <Button title='Add New Goal' onPress={startAddGoalHandler} color={'white'}/>
       <GoalInput onAddGoal={addGoalHandler} showModal={isModalVisivale} hideModal={closeAddGoalHandler}/>
       
       <View style={styles.goalsContainer}>
@@ -40,16 +40,15 @@ export default function App() {
         keyExtractor={(item, index) => { return item.id}}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    paddingTop: 60,
     paddingHorizontal: 16,
-    backgroundColor: ''
+    backgroundColor: '#311b6b'
   },
 
   goalsContainer: {
